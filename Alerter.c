@@ -1,7 +1,7 @@
 #include "Alerter.h"
 #include "stats.h"
 
-void check_and_alert(float maxThreshold, alerter_funcptr alerter_arr[], struct Stats computedStats)
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
   int i;
   int func_cntr = 2;
@@ -11,7 +11,7 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerter_arr[], struct S
     for(i=0; i < func_cntr; i++)
     {
       // alerters are updated
-      (*alerter_arr[i])();
+      (*alerters[i])();
     }
   }
   else
