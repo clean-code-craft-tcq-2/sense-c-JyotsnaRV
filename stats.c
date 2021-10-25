@@ -4,18 +4,20 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
     int i = 0;
     float total;
-    // function call for sorting
+    /* function call for sorting */
     numberset = num_sort((float *)numberset, setlength);
-    //calculate the total value of the set of values
+    /* update the minimum */
+    s.min = numberset[i];
+    /* calculate the total value of the set of values */
     for(i=0; i<setlength; i++)
     {
         total += numberset[i];
     }
-    // update the minimum, maximum and average values
-    s.min = numberset[i];
+    /* update the maximum and average values */
+    
     s.average = total/setlength;
     s.max = numberset[i-1];
-    // return the updated structure
+    /* return the updated structure */
     return s;
 }
 
