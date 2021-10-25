@@ -5,7 +5,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     int i = 0;
     float total;
     // function call for sorting
-    numberset = num_sort(numberset, setlength);
+    numberset = num_sort((float *)numberset, setlength);
     //calculate the total value of the set of values
     for(i=0; i<setlength; i++)
     {
