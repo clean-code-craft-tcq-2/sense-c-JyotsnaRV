@@ -7,7 +7,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     // function call for sorting
     numberset = num_sort(numberset, setlength);
     //calculate the total value of the set of values
-    for(i=setlength; i>0; i--)
+    for(i=0; i<setlength; i++)
     {
         total += numberset[i];
     }
@@ -22,17 +22,17 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 float* num_sort(float* data, int length)
 {
     int i,j;
-    float temp_var = 0;
-    for(i=length; i>0; i--)
+    float temp = 0;
+    for(i=0; i<length; i++)
     {
-        for(j=length; j>0; j--)
+        for(j=0; j<length; j++)
         {
             if(data[i] < data[j])
             {
                 /* rearrange the array order when the condition is true */
-                temp_var = data[i];
+                temp = data[i];
                 data[i] = data[j];
-                data[j] = temp_var;
+                data[j] = temp;
             }
         }
     }
