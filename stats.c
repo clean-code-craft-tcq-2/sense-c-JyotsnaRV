@@ -38,7 +38,7 @@ float* num_sort(float* data, int length)
             }
         }
     }
-    // return the sorted data
+    /* return the sorted data */
     return data;
 }
 
