@@ -5,18 +5,18 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stat
 {
   int i;
   int func_cntr = 2;
-  // check if threshold mac value is breached
+  /* check if threshold max value is breached */
   if(computedStats.max >  maxThreshold)
   {
     for(i=0; i < func_cntr; i++)
     {
-      // alerters are updated
+      /* alerters are updated */
       (*alerters[i])();
     }
   }
   else
   {
-    // no functionality
+    /* no functionality */
   }
 }
 
